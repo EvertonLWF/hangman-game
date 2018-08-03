@@ -15,7 +15,7 @@
 	position: fixed;
 	left: 213px;
 	top: 199px;
-	
+
 }
 .left{
 	background-color: #CCC;
@@ -88,4 +88,7 @@
 	height: 30px;
 	top: 480px;
 	left: 200px;
+}
+.forca{
+	position: fixed;
 }

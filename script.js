@@ -2,12 +2,17 @@ $(function(){
 	function animate(n){
 		switch (n){
 			case 0:
-				console.log("GAME OVER");
+				alert("GAME OVER");
 				$('.D').animate({
 					'left': 480
-				},500);
-				$('.right').attr('transform','rotate(90deg)');
-
+				},1000);
+				$('.right').css('transform','rotate('+90+'deg)').css('left','250px').css('top','245px');
+				$('.left').css('transform','rotate('+90+'deg)').css('left','130px').css('top','245px');
+				$('.cabeca').css('height',' 60px').css('top',' 135px');
+				
+				gravity(450,30);
+				// setTimeout(function,5000);
+				setTimeout(function(){ gravity(1000,1000); }, 3000);
 			break;
 
 			case 1:
@@ -27,6 +32,7 @@ $(function(){
 
 			case 4:
 				$('.pernaR').fadeIn(1500);
+
 				// alert("Errou a letra restam 3 vidas");
 			break;
 
@@ -39,6 +45,26 @@ $(function(){
 				// alert("Errou a letra restam 5 vidas");
 			break;
 		}
+	}
+	function gravity(v,d){
+		$('.pernaL').animate({
+					'top':"+="+d
+		}, v);
+		$('.pernaR').animate({
+					'top':"+="+d
+		}, v);
+		$('.corpo').animate({
+					'top':"+="+d
+		}, v);
+		$('.right').animate({
+					'top':"+="+d
+		}, v);
+		$('.left').animate({
+					'top':"+="+d
+		}, v);
+		$('.cabeca').animate({
+					'top':"+="+d
+		}, v);
 	}
 	$('#end').hide();
 	$('#vida').hide();
